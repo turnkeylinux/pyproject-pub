@@ -1,0 +1,12 @@
+Source: example
+Section: misc
+Priority: optional
+Maintainer: Alon Swartz <alon@turnkeylinux.org>
+Build-Depends: debhelper (>> 4.2.0)
+Standards-Version: 3.6.1
+
+Package: example
+Architecture: all
+Depends: python (>= 2.4)
+Section: misc
+Description: Example
