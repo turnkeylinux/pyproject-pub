@@ -3,10 +3,7 @@
 
 Options:
   -q --quiet	don't print anything
-
   -f=FOO	print FOO
-
-  --warn	print a warning
   --fatal       fatal error
 
 """
@@ -15,27 +12,19 @@ import getopt
 
 def usage(e=None):
     if e:
-        print >> sys.stderr, e
+        print >> sys.stderr, "error: " + str(e)
 
     print >> sys.stderr, "Syntax: %s [args]" % sys.argv[0]
-    print >> sys.stderr, __doc__
+    print >> sys.stderr, __doc__.strip()
     sys.exit(1)
 
-exitcode = 0
-def warn(s):
-    global exitcode
-    exitcode = 1
-
-    print >> sys.stderr, "example: " + str(s)
-
 def fatal(s):
-    warn(s)
+    print >> sys.stderr, "error: " + str(s)
     sys.exit(1)
 
 def main():
     try:
-        opts, args = getopt.gnu_getopt(sys.argv[1:], 'qf:h', ['warn',
-                                                          'fatal'])
+        opts, args = getopt.gnu_getopt(sys.argv[1:], 'qf:h', ['fatal'])
     except getopt.GetoptError, e:
         usage(e)
 
@@ -50,16 +39,12 @@ def main():
         elif opt == '-f':
             print "printing foo: " + val
 
-        elif opt == '--warn':
-            warn("this is a warning")
-
         elif opt == '--fatal':
             fatal("fatal condition")
 
     if not opt_quiet:
         print "printing args: " + `args`
 
-    sys.exit(exitcode)
     
 if __name__=="__main__":
     main()
