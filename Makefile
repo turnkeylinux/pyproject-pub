@@ -20,6 +20,7 @@ endif
 	rsync -a example/ ./
 	rm -rf example/
 
+	rm -rf .git
 	git-init 
 	git-add .
 	git-commit -m "Initialized project '$(name)' from template"
