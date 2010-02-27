@@ -65,16 +65,16 @@ install:
 	cp *.py $(PATH_INSTALL_LIB)
 
 	$(call with-py-executables, \
-	       ln -fs $(call libpath, $$module) $(PATH_BIN)/$(progname), \
-		   ln -fs $(call libpath, $$module) $(PATH_BIN)/$(call subcommand, $$module))
+	  ln -fs $(call libpath, $$module) $(PATH_BIN)/$(progname), \
+	  ln -fs $(call libpath, $$module) $(PATH_BIN)/$(call subcommand, $$module))
 
 # target: uninstall
 uninstall:
 	rm -rf $(PATH_INSTALL_LIB)
 
 	$(call with-py-executables, \
-		   rm -f $(PATH_BIN)/$(progname), \
-		   rm -f $(PATH_BIN)/$(call subcommand, $$module))
+	  rm -f $(PATH_BIN)/$(progname), \
+	  rm -f $(PATH_BIN)/$(call subcommand, $$module))
 
 # target: clean
 clean:
