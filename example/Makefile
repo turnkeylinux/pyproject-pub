@@ -17,7 +17,7 @@ dist: clean
 	-mkdir -p $(PATH_DIST)
 
 	-cp -a .git .gitignore $(PATH_DIST)
-	-cp -a *.sh *.c *.py Makefile pylib/ libexec* $(PATH_DIST)
+	-cp -a *.sh *.c *.py Makefile libexec* $(PATH_DIST)
 
 	tar jcvf $(PATH_DIST).tar.bz2 $(PATH_DIST)
 	rm -rf $(PATH_DIST)
@@ -72,4 +72,4 @@ uninstall:
 	  rm -f $(PATH_BIN)/$(call subcommand, $$module))
 
 clean:
-	rm -f *.pyc *.pyo _$(progname)
+	rm -f *.pyc *.pyo
