@@ -1,14 +1,14 @@
 #!/usr/bin/python
-#
+# 
 # Copyright (c) 2010 Liraz Siri <liraz@turnkeylinux.org>
-#
+# 
 # This file is part of Example.
-#
-# Example is free software; you can redistribute it and/or
+# 
+# Example is open source software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License as
 # published by the Free Software Foundation; either version 3 of
 # the License, or (at your option) any later version.
-#
+# 
 """Example command template
 
 Options:
