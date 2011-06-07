@@ -1,0 +1,68 @@
+Why does this exist?
+====================
+
+Minimize friction in creating a new Python program.
+
+Features
+========
+
+1) Auto-creates Git repository.
+2) Local installation via "make install" target
+3) Debian packaging support.
+4) Supports programs with a single executable command (I.e., foo) or
+   with multiple executable commands (example-foo, example-bar).
+
+Usage
+=====
+
+1) Initializing a new project::
+
+	cp -a pyproject-pub myproject
+	cd myproject
+	make init
+
+Installation paths
+==================
+
+$(prefix)/lib: where Python files go.
+$(prefix)/bin: where symbolic links to executable commands in lib/ go.
+$(prefix)/share/contrib: where shared contrib stuff goes.
+
+$(prefix) defaults to...
+
+    /usr/local: when installed locally with `make install` 
+    /usr: when installed from the built Debian package
+
+A program with a executable command
+===================================
+
+`make init` creates an Python file under $(yourprojectname).py
+containing cli stub code. Just implement your command there. When
+installed you will be able to execute $(yourprojectname)::
+
+       cp -a pyproject-pub mytest
+       cd mytest
+       make init
+
+       # edit your program
+       vim mytest.py
+
+       make install
+       mytest
+
+A program with multiple executable commands
+===========================================
+
+Create multiple executable Python files::
+
+       cp -a pyproject-pub mytest
+       cd mytest
+       make init
+       cp mytest.py foo.py
+       mv mytest.py bar.py
+
+       make install
+
+       # symlinks in /usr/local/bin
+       mytest-foo 
+       mytest-bar
