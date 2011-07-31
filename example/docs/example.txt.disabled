@@ -1,0 +1,50 @@
+=======
+example
+=======
+
+----------------------
+An example manual page
+----------------------
+
+:Author: Liraz Siri <liraz@turnkeylinux.org>
+:Date:   2011-07-31
+:Manual section: 8
+:Manual group: example
+
+SYNOPSIS
+========
+
+example [ -opts ] <example-arg>
+
+DESCRIPTION
+===========
+
+This is an example description.
+
+ARGUMENTS
+=========
+
+`<example-arg>` := this is an example argument. I could go on and on
+about it but it doesn't really matter because it's ot real.
+
+OPTIONS
+=======
+
+--example=VAL
+  This is an example option.
+
+  VAL := Is a string.
+
+--help
+  Help for example...
+
+EXAMPLE USAGE SCENARIO
+======================
+
+This is an example user scenario.
+
+SEE ALSO
+========
+
+``hello`` (8)
+
