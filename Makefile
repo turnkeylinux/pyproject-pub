@@ -21,9 +21,9 @@ endif
 	rm -rf example/
 
 	rm -rf .git
-	git-init 
-	git-add .
-	git-commit -m "Initialized project '$(name)' from template"
+	git init
+	git add .
+	git commit -m "Initialized project '$(name)' from template"
 
 uninstall:
 	rm -rf $(PATH_INSTALL_SHARE)
