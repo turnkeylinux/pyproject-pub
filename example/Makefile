@@ -20,7 +20,7 @@ dist:
 	-mkdir -p $(PATH_DIST)
 
 	cp -a .git $(PATH_DIST)
-	cd $(PATH_DIST) && git-checkout --force HEAD
+	cd $(PATH_DIST) && git checkout --force HEAD
 
 	tar jcvf $(PATH_DIST).tar.bz2 $(PATH_DIST)
 	rm -rf $(PATH_DIST)
